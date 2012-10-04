@@ -15,7 +15,8 @@ on indentation while being more concise and direct.
 ==
 ;; "Miser" indentation. MACRO-LEVEL saves 5 spaces.
 (macrolet
-    ((m () ...))
+    ((m ()
+       ...))
   (m))
 
 
