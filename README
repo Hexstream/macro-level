@@ -1,4 +1,4 @@
-Project's home: https://www.hexstreamsoft.com/projects/macro-level/
+Project's home: https://www.hexstreamsoft.com/libraries/macro-level/
 
 
 MACRO-LEVEL is an embarassingly trivial convenience macro that saves
@@ -18,33 +18,6 @@ on indentation while being more concise and direct.
     ((m ()
        ...))
   (m))
-
-
-When used as part of a macroexpansion, MACRO-LEVEL also conveniently
-relieves the macro implementor from naming and using a gensym for the
-one-shot macro when compared to writing out a MACROLET by hand, in
-addition to the other advantages.
-
-
-To use MACRO-LEVEL, simply (macro-level:macro-level ...) after loading
-the ASDF system, as this macro is not used that often and the length
-won't have any effect on the indentation:
-
-(macro-level:macro-level
-  ...)
-VS
-(macro-level
-  ...)
-
-Simply (:import-from #:macro-level #:macro-level) in your DEFPACKAGE
-if you prefer the latter form. Don't (:use)!
-
-
-Support could eventually be added to Slime so that interactive
-macroexpansion of MACRO-LEVEL calls with C-c C-m (slime-expand-1)
-would show the same expansion as interactively macroexpanding (m ...)
-after (defmacro m () ...), assuming the lexical context is not
-important.
 
 
 This library is in the Public Domain.
