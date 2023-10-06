@@ -12,9 +12,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>macro-level | Libraries | HexstreamSoft</title>
     <link rel="stylesheet" type="text/css" href="https://global.hexstream.dev/css/global.css" />
+    <link rel="stylesheet" type="text/css" href="https://global.hexstream.dev/css/section-nav.css" />
     <link rel="stylesheet" type="text/css" href="https://global.hexstream.dev/css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="https://global.hexstream.dev/css/tags.css" />
     <link rel="stylesheet" type="text/css" href="https://global.hexstream.dev/css/cl.css" />
+    <link rel="stylesheet" type="text/css" href="https://global.hexstream.dev/css/cl-definitions.css" />
     <link rel="stylesheet" type="text/css" href="https://www.hexstreamsoft.com/libraries/libraries.css" />
     <link rel="stylesheet" type="text/css" href="index.css" />
     <link rel="preload" as="font" type="font/woff2" href="https://global.hexstream.dev/fonts/kaushan-script/KaushanScript-Regular.woff2" crossorigin />
@@ -22,6 +24,7 @@
     <link rel="preload" as="image" type="image/svg+xml" href="https://global.hexstream.dev/non-free/images/logos/github.svg" />
     <link rel="preload" as="image" type="image/svg+xml" href="https://global.hexstream.dev/images/logos/public-domain.svg" />
     <link rel="preload" as="image" type="image/svg+xml" href="https://global.hexstream.dev/non-free/images/logos/quicklisp.svg" />
+    <script src="https://global.hexstream.dev/scripts/arrows-madness.mjs" type="module"></script>
     <script src="https://www.hexstreamsoft.com/libraries/libraries.mjs" type="module"></script>
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@HexstreamSoft" />
@@ -49,7 +52,7 @@
 
       </div>
 
-      <p id="last-updated"><span>This page was last updated on </span><time datetime="2018-09-06">6 september 2018</time><span>.</span></p>
+      <p id="last-updated"><span>This page was last updated on </span><time datetime="2023-10-06">6 october 2023</time><span>.</span></p>
 
     </nav>
 
@@ -119,23 +122,116 @@
         </div>
       </section>
 
-      <section id="documentation">
+      <nav class="tabs">
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#dictionary">Dictionary</a></li>
+        </ul>
+        <ul>
+          <li><a href="#future-work">Future work</a></li>
+        </ul>
+      </nav>
+
+      <section id="overview">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#overview" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">Overview</a>
+          </span>
+        </h1>
 
         <p>When used as part of a macroexpansion, <code class="relevant">macro-level</code> also conveniently relieves the macro implementor from naming and using a <code>gensym</code> for the one-shot macro when compared to writing out a <code>macrolet</code> by hand, in addition to the other advantages.</p>
 
-        <p>To use <code class="relevant">macro-level</code>, simply (<code class="relevant">macro-level:macro-level</code> ...) after loading the <cite><a href="http://common-lisp.net/project/asdf/">ASDF</a></cite> system, as this macro is not used that often and the length won't have any effect on the indentation:</p>
+      </section>
 
-        <div class="scroll">
-          <pre class="example"><code class="common-lisp">(<code class="relevant">macro-level:macro-level</code>
-  ...)
-<span class="comment">;; VS</span>
-(<code class="relevant">macro-level</code>
-  ...)</code></pre>
-        </div>
+      <section id="dictionary">
 
-        <p><b>Simply <code class="common-lisp">(:import-from #:macro-level #:macro-level)</code> in your <code>defpackage</code> if you prefer the latter form. Don't <code>(:use)</code>!</b></p>
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#dictionary" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">Dictionary</a>
+          </span>
+        </h1>
 
-        <p>Support could eventually be added to <cite><a href="https://common-lisp.net/project/slime/">Slime</a></cite> so that interactive macroexpansion of <code class="relevant">macro-level</code> calls with <kbd>C-c C-m</kbd> (<code>slime-expand-1</code>) would show the same expansion as interactively macroexpanding <code>(m ...)</code> after <code class="common-lisp">(defmacro m () ...)</code>, assuming the lexical context is not important.</p>
+        <nav class="tabs">
+          <ul>
+            <li><a href="#dictionary_macro-level"><span class="type">Package</span> <code>macro-level</code></a></li>
+            <li><a href="#dictionary_macro-level"><span class="type">Macro</span> <code>macro-level</code></a></li>
+          </ul>
+        </nav>
+
+        <section id="dictionary_macro-level">
+
+          <h1 class="breadcrumbs-bar">
+            <span class="section-relative-nav">
+              <a href="#dictionary_macro-level" class="anchor">⚓</a>
+            </span>
+            <span class="breadcrumbs">
+              <a href="#dictionary">Dictionary</a>
+              <span class="crumb"><span class="s"> » </span><a class="here">macro-level</a></span>
+            </span>
+          </h1>
+
+          <article class="package definition">
+
+            <h1><span class="type">Package</span> <span class="name self">macro-level</span></h1>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>Simply <code>(:import-from #:macro-level #:<code class="relevant"><a href="#dictionary_macro-level">macro-level</a></code>)</code> from your <a href="http://www.lispworks.com/documentation/HyperSpec/Body/m_defpkg.htm" target="_blank">defpackage</a>. Don't <code>(:use)</code>!</p>
+            </section>
+
+          </article>
+
+          <article class="macro definition">
+
+            <h1><span class="type">Macro</span> <span class="name self">macro-level</span></h1>
+
+            <p class="args-and-retvals">&amp;body <var>body</var> =&gt; <var>results</var></p>
+
+            <section class="arguments-and-values">
+              <h1>Arguments and Values</h1>
+              <ul>
+                <li><var>body</var> -- An <a href="http://www.lispworks.com/documentation/HyperSpec/Body/26_glo_i.htm#implicit_progn" target="_blank">implicit progn</a>.</li>
+                <li><var>results</var> -- The values of <var>body</var>.</li>
+
+              </ul>
+            </section>
+
+            <section class="description">
+              <h1>Description</h1>
+              <p>Expands to <code>`(macrolet ((,<var>macro</var> () ,@<var>body</var>)) (,<var>macro</var>))</code> where <var>macro</var> is a gensym.</p>
+            </section>
+
+          </article>
+
+        </section>
+
+        <nav class="end-of-section-indicator">
+          <a href="#dictionary">
+            "<span>Dictionary</span>" end.
+          </a>
+        </nav>
+
+      </section>
+
+      <section id="future-work">
+
+        <h1 class="breadcrumbs-bar">
+          <span class="section-relative-nav">
+            <a href="#future-work" class="anchor">⚓</a>
+          </span>
+          <span class="breadcrumbs">
+            <a class="here">Future work</a>
+          </span>
+        </h1>
+
+        <p>Support could eventually be added to <a href="https://common-lisp.net/project/slime/" target="_blank">Slime</a> so that interactive macroexpansion of <code class="relevant">macro-level</code> calls with <kbd>C-c C-m</kbd> (<code>slime-expand-1</code>)<br />would show the same expansion as interactively macroexpanding <code>(m ...)</code> after <code class="common-lisp">(defmacro m () ...)</code>, assuming the lexical context is not important.</p>
 
       </section>
 
